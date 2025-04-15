@@ -13,7 +13,10 @@
       <img src="/push_pin.svg" class="pin" />
       <h2>From: <%=msg.user%></h2>
       <p><%= msg.text %></p>
-      <em><%= msg.added.toLocaleString() %></em>
+      <em
+        ><%= msg.added.toLocaleDateString('en-US', { year: 'numeric', month:
+        'short', day: 'numeric' }) %></em
+      >
     </div>
   </body>
 </html>
