@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/form.css" />
+
+    <title>New Message</title>
+  </head>
+  <body>
+    <a class="back" onclick="history.back()">« Go back</a>
+
+    <form method="POST" action="/new">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Name" required />
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        type="text"
+        placeholder="Message..."
+        name="message"
+        required
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

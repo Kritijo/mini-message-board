@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/message.css" />
+
+    <title>New Message</title>
+  </head>
+  <body>
+    <a class="back" onclick="history.back()">Go back</a>
+    <div style="background-color: <%= colour %>">
+      <img src="/push_pin.svg" class="pin" />
+      <h2>From: <%=msg.user%></h2>
+      <p><%= msg.text %></p>
+      <em><%= msg.added.toLocaleString() %></em>
+    </div>
+  </body>
+</html>
