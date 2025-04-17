@@ -9,13 +9,15 @@
 body {
   height: 100vh;
   background-color: snow;
+  padding: 10px;
 }
 
 .back {
-  display: block;
+  display: inline-block;
   cursor: pointer;
   text-decoration: underline;
   margin: 10px;
+  z-index: 2;
 }
 
 .pin {
@@ -34,7 +36,7 @@ div {
   flex-direction: column;
   gap: 10px;
   width: 500px;
-  height: 400px;
+  min-height: 400px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%) rotate(-3deg);
@@ -59,6 +61,11 @@ p {
 
   div {
     width: 300px;
-    height: 300px;
+    min-height: 300px;
+    max-height: 500px;
+  }
+  p {
+    overflow: auto;
+    font-size: 0.85rem;
   }
 }
