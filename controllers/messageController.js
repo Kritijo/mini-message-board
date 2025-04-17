@@ -1,20 +1,23 @@
-const messages = require("../models/messages");
-const colours = require("../models/colours");
+const db = require("../db/queries");
+const colours = require("../db/colours");
 
-exports.home = (req, res) => {
+exports.home = async (req, res) => {
+    const messages = await db.getAllMessages();
     res.render("index", { messages });
 };
 
-exports.viewMessage = (req, res) => {
-    const msg = messages[parseInt(req.params.id)];
+exports.viewMessage = async (req, res) => {
+    const id = parseInt(req.params.id);
+    const msg = await db.viewMessage(id);
     const colour = colours[Math.floor(Math.random() * colours.length)];
     if (!msg) return res.status(404).send("Not found");
     res.render("message", { msg, colour });
 };
 
-exports.addMessage = (req, res) => {
-    const messageUser = req.body.name;
+exports.addMessage = async (req, res) => {
+    const messageUser = req.body.username;
     const messageText = req.body.message;
-    messages.push({ text: messageText, user: messageUser, added: new Date() });
+    await db.addMessage(messageUser, messageText);
     res.redirect("/");
 };
+ 

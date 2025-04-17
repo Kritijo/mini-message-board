@@ -15,12 +15,12 @@
       <ul>
         <% messages.forEach((msg,idx) => { %>
         <li>
-          <strong><%= msg.user %></strong>: <%= msg.text %>
-          <em
-            ><%= msg.added.toLocaleDateString('en-US', { year: 'numeric', month:
-            'short', day: 'numeric'}) %></em
-          >
-          <a class="open" href="/message/<%= idx %>">Open message</a>
+          <strong><%= msg.username %></strong>: <%= msg.text %>
+          <em>
+            <%= msg.added.toLocaleDateString('en-US', { year: 'numeric', month:
+            'short', day: 'numeric'}) %>
+          </em>
+          <a class="open" href="/message/<%= msg.id %>">Open message</a>
         </li>
         <% }) %>
       </ul>
