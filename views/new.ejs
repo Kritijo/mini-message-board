@@ -12,12 +12,20 @@
 
     <form method="POST" action="/new">
       <label for="name">Name</label>
-      <input id="name" type="text" name="username" placeholder="Name" required />
+      <input
+        id="name"
+        type="text"
+        name="username"
+        placeholder="Name"
+        maxlength="50"
+        required
+      />
       <label for="message">Message</label>
       <textarea
         id="message"
         placeholder="Message..."
         name="message"
+        maxlength="500"
         required
       ></textarea>
       <button type="submit">Submit</button>

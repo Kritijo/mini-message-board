@@ -62,9 +62,13 @@ li {
   text-overflow: ellipsis;
 }
 li strong {
+  max-width: 200px;
   display: block;
   font-size: 1.1rem;
   margin-bottom: 0.4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 li em {
   display: block;
@@ -96,10 +100,19 @@ li em {
     flex-direction: column;
     gap: 10px;
   }
+  .add {
+    font-size: small;
+  }
 }
 
 @media (max-width: 380px) {
   header {
     height: 18vh;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  li strong {
+    max-width: 150px;
   }
 }

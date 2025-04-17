@@ -39,6 +39,7 @@ div {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%) rotate(-3deg);
   transition: transform 0.2s ease;
+  overflow-wrap: break-word;
 }
 
 div:hover {
